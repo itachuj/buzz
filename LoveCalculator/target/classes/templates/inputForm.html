@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Input</title>
+</head>
+<body>
+<form action="#" th:action="@{/}"
+      th:object ="${input}" method = "post">
+        <table>
+            <tr>
+                <td>Name one</td>
+                <td><input type="text" th:field="*{name1}"/></td>
+                <td th:if="${#fields.hasErrors('name1')}" th:errors="*{name1}">Name Error</td>
+            </tr>
+            <tr>
+                <td>Name twp</td>
+                <td><input type="text" th:field="*{name2}"/></td>
+                <td th:if="${#fields.hasErrors('name2')}" th:errors="*{name2}">Name Error</td>
+            </tr>
+            <tr>
+                <td><button type="submit">Submit</button></td>
+            </tr>
+        </table>
+</form>
+
+</body>
+</html>
